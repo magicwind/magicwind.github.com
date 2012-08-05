@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Frontend Blog</title>
+  <title>如何在github上部署Octopress个人博客 - Frontend Blog</title>
   <meta name="author" content="Ludwig Xu">
 
   
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://magicwind.github.com/">
+  <link rel="canonical" href="http://magicwind.github.com/blog/2012/07/21/how-to-deploy-to-github/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/21/how-to-deploy-to-github/">如何在github上部署Octopress个人博客</a></h1>
+      <h1 class="entry-title">如何在github上部署Octopress个人博客</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>在接触过Octopress后，最令人兴奋的事情莫过于将自己的博客搭到github上。一方面可以彰显出自己Geeker的身份，另一方面利用完全免费的托管主机，可以100％深度定制网站，这在几年前是不可能有的好事。<br/>
+<div class="entry-content"><p>在接触过Octopress后，最令人兴奋的事情莫过于将自己的博客搭到github上。一方面可以彰显出自己Geeker的身份，另一方面利用完全免费的托管主机，可以100％深度定制网站，这在几年前是不可能有的好事。<br/>
 我在仔细阅读了Octopress的官方文档后，并没有十分顺利的一次就成功搭建，而是尝试了两三次。事后想想，其实文档还算蛮清楚的，主要是自己对github的托管方式还没完全理解，也就是github page是如何工作的。
 所以在此做一些额外的补充：</p>
 
@@ -123,22 +120,16 @@
 
 <p>如果对git的命令不太熟悉的， 可以参考这篇文章：<a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Octopress: Setting up a Blog and Contributing to an Existing One</a>。</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/21/say-hello-to-octopress/">Say Hello to Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ludwig Xu</span></span>
+
+      
 
 
 
@@ -150,71 +141,32 @@
   
 
 
-<time datetime="2012-07-21T16:56:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
-        
-      </p>
+<time datetime="2012-07-21T17:37:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
+      
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://magicwind.github.com/blog/2012/07/21/how-to-deploy-to-github/" data-via="" data-counturl="http://magicwind.github.com/blog/2012/07/21/how-to-deploy-to-github/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-  <div class="entry-content"><p>First time to touch Octopress.<br/>
-Very like this way to write blog.</p>
-
-<p>为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：<br/>
-创建新博客</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>创建新页面</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]
-</span><span class='line'># creates /source/super-awesome/index.markdown
-</span><span class='line'>rake new_page[super-awesome/page.html]
-</span><span class='line'># creates /source/super-awesome/page.html</span></code></pre></td></tr></table></div></figure>
-
-
-<p>生成静态页面</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查看修改</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake watch</span></code></pre></td></tr></table></div></figure>
-
-
-<p>预览</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>部署到远程服务器（之后别忘记用Git提交到github）</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/21/say-hello-to-octopress/" title="Previous Post: Say hello to Octopress">&laquo; Say hello to Octopress</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -239,6 +191,7 @@ Very like this way to write blog.</p>
 
   
 </aside>
+
 
     </div>
   </div>

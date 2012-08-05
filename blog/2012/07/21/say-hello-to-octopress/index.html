@@ -5,12 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Frontend Blog</title>
+  <title>Say hello to Octopress - Frontend Blog</title>
   <meta name="author" content="Ludwig Xu">
 
   
-  <meta name="description" content="在接触过Octopress后，最令人兴奋的事情莫过于将自己的博客搭到github上。一方面可以彰显出自己Geeker的身份，另一方面利用完全免费的托管主机，可以100％深度定制网站，这在几年前是不可能有的好事。
-我在仔细阅读了Octopress的官方文档后，并没有十分顺利的一次就成功搭建， &hellip;">
+  <meta name="description" content="First time to touch Octopress.
+Very like this way to write blog. 为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：
+创建新博客 1
+rake new_post["title"] 创建新页面 1
+2
+3 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://magicwind.github.com/">
+  <link rel="canonical" href="http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,78 +67,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/21/how-to-deploy-to-github/">如何在github上部署Octopress个人博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-21T17:37:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在接触过Octopress后，最令人兴奋的事情莫过于将自己的博客搭到github上。一方面可以彰显出自己Geeker的身份，另一方面利用完全免费的托管主机，可以100％深度定制网站，这在几年前是不可能有的好事。<br/>
-我在仔细阅读了Octopress的官方文档后，并没有十分顺利的一次就成功搭建，而是尝试了两三次。事后想想，其实文档还算蛮清楚的，主要是自己对github的托管方式还没完全理解，也就是github page是如何工作的。
-所以在此做一些额外的补充：</p>
-
-<ol>
-<li><p>github page托管网站的方式主要分两种，一种是针对用户或者组织的网站，另一种是针对项目的网站。</p>
-
-<p> 一个用户或者组织只能拥有一个网站，而且网站的域名也是约定好的。比如用户名叫foobar，那么该用户的网站域名就是foobar.github.com，当然之后也可以绑定自己的其他域名。组织和用户的规则一样。</p>
-
-<p> 如果是项目网站，那么网站的域名就是username.github.com/projectname，看上去像是一个用户的子页面。</p></li>
-<li><p>github page不仅默认规定了网站的域名，同时也规定了repo的名字。在github page上新建一个网站，其实就相当于在github上新建一个repo。</p>
-
-<p> 对于用户和组织来说，repo的名字就是username.github.com。没错，repo的名字就是域名，这一点我一开始也有些迷惑，不是很习惯这命名，仔细看了<a href="https://help.github.com/articles/user-organization-and-project-pages" title="github page的文档">github page的文档</a>后才发现这样是对的。</p></li>
-<li><p>了解上面两点后，后面的就不难了。按照<a href="http://octopress.org/docs/deploying/github/" title="Deploying to Github Pages">文档</a>一步一步做下去就可以了。主要步骤就是新建repo, 然后依次执行如下命令就可以了。</p></li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
-</span><span class='line'># 需要你输入repo地址等信息
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果对git的命令不太熟悉的， 可以参考这篇文章：<a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Octopress: Setting up a Blog and Contributing to an Existing One</a>。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/21/say-hello-to-octopress/">Say Hello to Octopress</a></h1>
+      <h1 class="entry-title">Say Hello to Octopress</h1>
     
     
       <p class="meta">
@@ -157,7 +95,7 @@
   </header>
 
 
-  <div class="entry-content"><p>First time to touch Octopress.<br/>
+<div class="entry-content"><p>First time to touch Octopress.<br/>
 Very like this way to write blog.</p>
 
 <p>为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：<br/>
@@ -203,18 +141,53 @@ Very like this way to write blog.</p>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Ludwig Xu</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-07-21T16:56:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress/" data-via="" data-counturl="http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/21/how-to-deploy-to-github/" title="Next Post: 如何在github上部署Octopress个人博客">如何在github上部署Octopress个人博客 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -239,6 +212,7 @@ Very like this way to write blog.</p>
 
   
 </aside>
+
 
     </div>
   </div>
