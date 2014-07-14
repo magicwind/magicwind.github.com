@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Frontend Blog]]></title>
+  <title><![CDATA[Magicwind's Technical Blog]]></title>
   <link href="http://magicwind.github.com/atom.xml" rel="self"/>
   <link href="http://magicwind.github.com/"/>
-  <updated>2012-08-08T19:19:06+08:00</updated>
+  <updated>2014-07-14T11:43:48+08:00</updated>
   <id>http://magicwind.github.com/</id>
   <author>
     <name><![CDATA[Ludwig Xu]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在Windows7上使用Octopress时遇到的编码问题]]></title>
+    <link href="http://magicwind.github.com/blog/2014/07/11/octopress-encoding-error-on-windows7/"/>
+    <updated>2014-07-11T15:49:00+08:00</updated>
+    <id>http://magicwind.github.com/blog/2014/07/11/octopress-encoding-error-on-windows7</id>
+    <content type="html"><![CDATA[<p>在windows7上运行rake preview命令时会遇到一个错误，导致首页在浏览器里不能正常显示。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in post
+</span><span class='line'>Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in index.html</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上网查了下解决办法， 需要把Windows命令行的Code Page设置成UTF-8。也就是需要在运行rake命令前先输入以下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chcp 65001</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这时候再执行rake命令时就一切正常了。</p>
+
+<p>另外一点要注意的是，在Windows7下所有文件要用不带BOM的UTF-8格式保存，要不然一些gem在解析文件上会发生错误。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[如何在github上部署Octopress个人博客]]></title>
