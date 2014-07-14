@@ -9,10 +9,11 @@
   <meta name="author" content="Ludwig Xu">
 
   
-  <meta name="description" content="在windows7上运行rake preview命令时会遇到一个错误，导致首页在浏览器里不能正常显示。 1
+  <meta name="description" content="准备工作:
+先Clone一份代码，比如克隆我的Blog的命令是 1
+git clone git@github.com:magicwind/magicwind.github.com.git 然后CD到本地Git目录，切换到source分支 1
 2
-Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in post
-Liquid Exception &hellip;">
+cd magicwind.github.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +80,75 @@ Liquid Exception &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/14/resume-git-setup-on-another-computer/">如何在另一台电脑上继续更新Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-14T11:52:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>准备工作:
+先Clone一份代码，比如克隆我的Blog的命令是</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:magicwind/magicwind.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后CD到本地Git目录，切换到source分支</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd magicwind.github.com
+</span><span class='line'>git checkout source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>运行rake generate生成public目录</p>
+
+<p>接下来可以手动创建_deploy目录，在该目录下运行以下git命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git remote add origin git@github.com:magicwind/magicwind.github.com.git
+</span><span class='line'>git fetch
+</span><span class='line'>git checkout master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>保证_deploy目录下的git有push权限（检查下SSH证书的配置）。</p>
+
+<p>回到上级magicwind.github.com目录就可以使用rake deploy命令同步_deploy目录下的所有文件到远程master分支了。</p>
+
+<p>最后别忘记commit和push根目录的改动到远程source分支。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -286,6 +356,10 @@ Very like this way to write blog.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/14/resume-git-setup-on-another-computer/">如何在另一台电脑上继续更新Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/07/11/octopress-encoding-error-on-windows7/">在Windows7上使用Octopress时遇到的编码问题</a>

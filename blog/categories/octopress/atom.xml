@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Magicwind's Technical Blog]]></title>
   <link href="http://magicwind.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://magicwind.github.com/"/>
-  <updated>2014-07-14T11:43:48+08:00</updated>
+  <updated>2014-07-14T12:47:37+08:00</updated>
   <id>http://magicwind.github.com/</id>
   <author>
     <name><![CDATA[Ludwig Xu]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[如何在另一台电脑上继续更新Octopress]]></title>
+    <link href="http://magicwind.github.com/blog/2014/07/14/resume-git-setup-on-another-computer/"/>
+    <updated>2014-07-14T11:52:00+08:00</updated>
+    <id>http://magicwind.github.com/blog/2014/07/14/resume-git-setup-on-another-computer</id>
+    <content type="html"><![CDATA[<p>准备工作:
+先Clone一份代码，比如克隆我的Blog的命令是
+<code>
+git clone git@github.com:magicwind/magicwind.github.com.git
+</code></p>
+
+<p>然后CD到本地Git目录，切换到source分支
+<code>
+cd magicwind.github.com
+git checkout source
+</code>
+运行rake generate生成public目录</p>
+
+<p>接下来可以手动创建_deploy目录，在该目录下运行以下git命令
+<code>
+git init
+git remote add origin git@github.com:magicwind/magicwind.github.com.git
+git fetch
+git checkout master
+</code>
+保证_deploy目录下的git有push权限（检查下SSH证书的配置）。</p>
+
+<p>回到上级magicwind.github.com目录就可以使用rake deploy命令同步_deploy目录下的所有文件到远程master分支了。</p>
+
+<p>最后别忘记commit和push根目录的改动到远程source分支。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在Windows7上使用Octopress时遇到的编码问题]]></title>

@@ -5,14 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>在Windows7上使用Octopress时遇到的编码问题 - Magicwind's Technical Blog</title>
+  <title>如何在另一台电脑上继续更新Octopress - Magicwind's Technical Blog</title>
   <meta name="author" content="Ludwig Xu">
 
   
-  <meta name="description" content="在windows7上运行rake preview命令时会遇到一个错误，导致首页在浏览器里不能正常显示。 1
+  <meta name="description" content="准备工作:
+先Clone一份代码，比如克隆我的Blog的命令是 1
+git clone git@github.com:magicwind/magicwind.github.com.git 然后CD到本地Git目录，切换到source分支 1
 2
-Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in post
-Liquid Exception &hellip;">
+cd magicwind.github.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@ Liquid Exception &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://magicwind.github.com/blog/2014/07/11/octopress-encoding-error-on-windows7/">
+  <link rel="canonical" href="http://magicwind.github.com/blog/2014/07/14/resume-git-setup-on-another-computer/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -82,7 +83,7 @@ Liquid Exception &hellip;">
   
   <header>
     
-      <h1 class="entry-title">在Windows7上使用Octopress时遇到的编码问题</h1>
+      <h1 class="entry-title">如何在另一台电脑上继续更新Octopress</h1>
     
     
       <p class="meta">
@@ -98,30 +99,47 @@ Liquid Exception &hellip;">
   
 
 
-<time datetime="2014-07-11T15:49:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+<time datetime="2014-07-14T11:52:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在windows7上运行rake preview命令时会遇到一个错误，导致首页在浏览器里不能正常显示。</p>
+<div class="entry-content"><p>准备工作:
+先Clone一份代码，比如克隆我的Blog的命令是</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:magicwind/magicwind.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后CD到本地Git目录，切换到source分支</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in post
-</span><span class='line'>Liquid Exception: incompatible character encodings: IBM437 and UTF-8 in index.html</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd magicwind.github.com
+</span><span class='line'>git checkout source</span></code></pre></td></tr></table></div></figure>
 
 
-<p>上网查了下解决办法， 需要把Windows命令行的Code Page设置成UTF-8。也就是需要在运行rake命令前先输入以下命令：</p>
+<p>运行rake generate生成public目录</p>
+
+<p>接下来可以手动创建_deploy目录，在该目录下运行以下git命令</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chcp 65001</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git remote add origin git@github.com:magicwind/magicwind.github.com.git
+</span><span class='line'>git fetch
+</span><span class='line'>git checkout master</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这时候再执行rake命令时就一切正常了。</p>
+<p>保证_deploy目录下的git有push权限（检查下SSH证书的配置）。</p>
 
-<p>另外一点要注意的是，在Windows7下所有文件要用不带BOM的UTF-8格式保存，要不然一些gem在解析文件上会发生错误。</p>
+<p>回到上级magicwind.github.com目录就可以使用rake deploy命令同步_deploy目录下的所有文件到远程master分支了。</p>
+
+<p>最后别忘记commit和push根目录的改动到远程source分支。</p>
 </div>
 
 
@@ -144,7 +162,7 @@ Liquid Exception &hellip;">
   
 
 
-<time datetime="2014-07-11T15:49:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+<time datetime="2014-07-14T11:52:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
       
 
 <span class="categories">
@@ -165,10 +183,8 @@ Liquid Exception &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/21/how-to-deploy-to-github/" title="Previous Post: 如何在github上部署Octopress个人博客">&laquo; 如何在github上部署Octopress个人博客</a>
+        <a class="basic-alignment left" href="/blog/2014/07/11/octopress-encoding-error-on-windows7/" title="Previous Post: 在Windows7上使用Octopress时遇到的编码问题">&laquo; 在Windows7上使用Octopress时遇到的编码问题</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/07/14/resume-git-setup-on-another-computer/" title="Next Post: 如何在另一台电脑上继续更新Octopress">如何在另一台电脑上继续更新Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -231,8 +247,8 @@ Liquid Exception &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://magicwind.github.com/blog/2014/07/11/octopress-encoding-error-on-windows7/';
-        var disqus_url = 'http://magicwind.github.com/blog/2014/07/11/octopress-encoding-error-on-windows7/';
+        var disqus_identifier = 'http://magicwind.github.com/blog/2014/07/14/resume-git-setup-on-another-computer/';
+        var disqus_url = 'http://magicwind.github.com/blog/2014/07/14/resume-git-setup-on-another-computer/';
         var disqus_script = 'embed.js';
       
     (function () {
