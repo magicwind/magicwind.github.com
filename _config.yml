@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://magicwind.github.com
-title: Frontend Blog
-subtitle: A blogging framework for hackers.
+title: Magicwind's Technical Blog
+subtitle: Time is money.
 author: Ludwig Xu
 simple_search: http://google.com/search
 description:
@@ -67,9 +67,9 @@ github_skip_forks: true
 twitter_user:
 twitter_tweet_count: 4
 twitter_show_replies: false
-twitter_follow_button: true
+twitter_follow_button: false
 twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
 google_plus_one: false

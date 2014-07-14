@@ -3,7 +3,7 @@ layout: post
 title: "如何在github上部署Octopress个人博客"
 date: 2012-07-21 17:37
 comments: true
-categories: 
+categories: Octopress
 ---
 
 在接触过Octopress后，最令人兴奋的事情莫过于将自己的博客搭到github上。一方面可以彰显出自己Geeker的身份，另一方面利用完全免费的托管主机，可以100％深度定制网站，这在几年前是不可能有的好事。  
