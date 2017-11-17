@@ -1,0 +1,12 @@
+Setup Octopress
+
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+Next, install dependencies.
+
+gem install bundler
+rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+bundle install
+Install the default Octopress theme.
+
+rake install

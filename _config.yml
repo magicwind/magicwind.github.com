@@ -5,7 +5,7 @@
 url: http://magicwind.github.com
 title: Magicwind's Technical Blog
 subtitle: Time is money.
-author: Ludwig Xu
+author: Feng Xu
 simple_search: http://google.com/search
 description:
 
@@ -97,3 +97,6 @@ google_analytics_tracking_id: UA-33976901-1
 
 # Facebook Like
 facebook_like: false
+
+# Segment
+segment_js_source_id: TXDgauHCAmi1zVvuLFr56Q53h3OL8vvG
