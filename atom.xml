@@ -4,10 +4,10 @@
   <title><![CDATA[Magicwind's Technical Blog]]></title>
   <link href="http://magicwind.github.com/atom.xml" rel="self"/>
   <link href="http://magicwind.github.com/"/>
-  <updated>2014-07-14T12:47:37+08:00</updated>
+  <updated>2017-11-29T22:54:48+08:00</updated>
   <id>http://magicwind.github.com/</id>
   <author>
-    <name><![CDATA[Ludwig Xu]]></name>
+    <name><![CDATA[Feng Xu]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -121,14 +121,30 @@
     <link href="http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress/"/>
     <updated>2012-07-21T16:56:00+08:00</updated>
     <id>http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress</id>
-    <content type="html"><![CDATA[<p>First time to touch Octopress.<br/>
+    <content type="html"><![CDATA[<p>Updated 2017-11-17: Use ruby 2.4.2 (installed by homebrew) on macOS Sierra.</p>
+
+<p>需要手工安装:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install jekyll
+</span><span class='line'>gem install compass
+</span><span class='line'>gem install rack</span></code></pre></td></tr></table></div></figure>
+
+
+<p>启动命令需要使用bundle exec rake some_action</p>
+
+<p>&#8212;&#8212;&#8212;&#8212;&#8211;分界线&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+
+<p>First time to touch Octopress.<br/>
 Very like this way to write blog.</p>
 
 <p>为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：<br/>
 创建新博客</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
 
 
 <p>创建新页面</p>
@@ -137,34 +153,34 @@ Very like this way to write blog.</p>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake new_page[super-awesome]
 </span><span class='line'># creates /source/super-awesome/index.markdown
-</span><span class='line'>rake new_page[super-awesome/page.html]
+</span><span class='line'>rbundle exec ake new_page[super-awesome/page.html]
 </span><span class='line'># creates /source/super-awesome/page.html</span></code></pre></td></tr></table></div></figure>
 
 
 <p>生成静态页面</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake generate</span></code></pre></td></tr></table></div></figure>
 
 
 <p>查看修改</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake watch</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake watch</span></code></pre></td></tr></table></div></figure>
 
 
 <p>预览</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake preview</span></code></pre></td></tr></table></div></figure>
 
 
 <p>部署到远程服务器（之后别忘记用Git提交到github）</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake deploy</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

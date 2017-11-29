@@ -6,15 +6,15 @@
 <head>
   <meta charset="utf-8">
   <title>Say hello to Octopress - Magicwind's Technical Blog</title>
-  <meta name="author" content="Ludwig Xu">
+  <meta name="author" content="Feng Xu">
 
   
-  <meta name="description" content="First time to touch Octopress.
-Very like this way to write blog. 为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：
-创建新博客 1
-rake new_post["title"] 创建新页面 1
+  <meta name="description" content="Updated 2017-11-17: Use ruby 2.4.2 (installed by homebrew) on macOS Sierra. 需要手工安装: 1
 2
-3 &hellip;">
+3
+gem install jekyll
+gem install compass
+gem install rack &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -48,6 +48,15 @@ rake new_post["title"] 创建新页面 1
   </script>
 
 
+  
+<script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+    analytics.load("TXDgauHCAmi1zVvuLFr56Q53h3OL8vvG");
+    analytics.page();
+    }}();
+</script>
+
+
 </head>
 
 <body   >
@@ -74,6 +83,8 @@ rake new_post["title"] 创建新页面 1
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="https://www.magicwind.top">魔风的技术博客</a></li>
+  <li><a href="https://www.magicwind.top/currencies">汇率转换</a></li>
 </ul>
 
 </nav>
@@ -107,14 +118,30 @@ rake new_post["title"] 创建新页面 1
   </header>
 
 
-<div class="entry-content"><p>First time to touch Octopress.<br/>
+<div class="entry-content"><p>Updated 2017-11-17: Use ruby 2.4.2 (installed by homebrew) on macOS Sierra.</p>
+
+<p>需要手工安装:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install jekyll
+</span><span class='line'>gem install compass
+</span><span class='line'>gem install rack</span></code></pre></td></tr></table></div></figure>
+
+
+<p>启动命令需要使用bundle exec rake some_action</p>
+
+<p>&#8212;&#8212;&#8212;&#8212;&#8211;分界线&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+
+<p>First time to touch Octopress.<br/>
 Very like this way to write blog.</p>
 
 <p>为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：<br/>
 创建新博客</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
 
 
 <p>创建新页面</p>
@@ -123,34 +150,34 @@ Very like this way to write blog.</p>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake new_page[super-awesome]
 </span><span class='line'># creates /source/super-awesome/index.markdown
-</span><span class='line'>rake new_page[super-awesome/page.html]
+</span><span class='line'>rbundle exec ake new_page[super-awesome/page.html]
 </span><span class='line'># creates /source/super-awesome/page.html</span></code></pre></td></tr></table></div></figure>
 
 
 <p>生成静态页面</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake generate</span></code></pre></td></tr></table></div></figure>
 
 
 <p>查看修改</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake watch</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake watch</span></code></pre></td></tr></table></div></figure>
 
 
 <p>预览</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake preview</span></code></pre></td></tr></table></div></figure>
 
 
 <p>部署到远程服务器（之后别忘记用Git提交到github）</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake deploy</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
@@ -160,7 +187,7 @@ Very like this way to write blog.</p>
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Ludwig Xu</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Feng Xu</span></span>
 
       
 
@@ -247,7 +274,7 @@ Very like this way to write blog.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Ludwig Xu -
+  Copyright &copy; 2017 - Feng Xu -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

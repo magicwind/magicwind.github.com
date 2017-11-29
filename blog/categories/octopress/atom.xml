@@ -4,10 +4,10 @@
   <title><![CDATA[Category: Octopress | Magicwind's Technical Blog]]></title>
   <link href="http://magicwind.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://magicwind.github.com/"/>
-  <updated>2014-07-14T12:47:37+08:00</updated>
+  <updated>2017-11-29T22:54:48+08:00</updated>
   <id>http://magicwind.github.com/</id>
   <author>
-    <name><![CDATA[Ludwig Xu]]></name>
+    <name><![CDATA[Feng Xu]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -31,14 +31,14 @@ git checkout source
 </code>
 运行rake generate生成public目录</p>
 
-<p>接下来可以手动创建_deploy目录，在该目录下运行以下git命令
+<p>接下来可以手动创建<em>deploy目录，在该目录下运行以下git命令
 <code>
 git init
 git remote add origin git@github.com:magicwind/magicwind.github.com.git
 git fetch
 git checkout master
 </code>
-保证_deploy目录下的git有push权限（检查下SSH证书的配置）。</p>
+保证</em>deploy目录下的git有push权限（检查下SSH证书的配置）。</p>
 
 <p>回到上级magicwind.github.com目录就可以使用rake deploy命令同步_deploy目录下的所有文件到远程master分支了。</p>
 
@@ -106,22 +106,34 @@ rake deploy
     <link href="http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress/"/>
     <updated>2012-07-21T16:56:00+08:00</updated>
     <id>http://magicwind.github.com/blog/2012/07/21/say-hello-to-octopress</id>
-    <content type="html"><![CDATA[<p>First time to touch Octopress.<br/>
+    <content type="html"><![CDATA[<p>Updated 2017-11-17: Use ruby 2.4.2 (installed by homebrew) on macOS Sierra.</p>
+
+<p>需要手工安装:
+<code>
+gem install jekyll
+gem install compass
+gem install rack
+</code>
+启动命令需要使用bundle exec rake some_action</p>
+
+<p>--------------分界线---------------</p>
+
+<p>First time to touch Octopress.<br/>
 Very like this way to write blog.</p>
 
 <p>为了方便记忆Octopress的各种常用命令，现制作Cheat Sheet如下：<br/>
 创建新博客
 <code>
-rake new_post["title"]
+bundle exec rake new_post["title"]
 </code></p>
 
 <p>创建新页面
 ```
-rake new_page[super-awesome]</p>
+bundle exec rake new_page[super-awesome]</p>
 
 <h1>creates /source/super-awesome/index.markdown</h1>
 
-<p>rake new_page[super-awesome/page.html]</p>
+<p>rbundle exec ake new_page[super-awesome/page.html]</p>
 
 <h1>creates /source/super-awesome/page.html</h1>
 
@@ -129,22 +141,22 @@ rake new_page[super-awesome]</p>
 
 <p>生成静态页面
 <code>
-rake generate
+bundle exec rake generate
 </code></p>
 
 <p>查看修改
 <code>
-rake watch
+bundle exec rake watch
 </code></p>
 
 <p>预览
 <code>
-rake preview
+bundle exec rake preview
 </code></p>
 
 <p>部署到远程服务器（之后别忘记用Git提交到github）
 <code>
-rake deploy
+bundle exec rake deploy
 </code></p>
 ]]></content>
   </entry>
